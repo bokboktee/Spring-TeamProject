@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<context:component-scan
+		base-package="com.wan.nss.controller" />
+
+	<!-- 에러 어노테이션 관리 (적절한 에러에 맞는 에러메서드 연결) -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+
+	<!-- 에러 xml 관리 -->
+	<!-- <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> 
+		<property name="defaultErrorView" value="error/error.jsp" /> </bean> -->
+
+	<!-- 이미지 업로드 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="-1" />
+	</bean>
+
+	<!-- 다국어 처리 -->
+
+	<!-- 메세지 파일 읽어들이는 객체 생성 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>message.messageSource</value> <!-- 지역정보랑 .properties는 알아서 붙어줌 -->
+			</list>
+		</property>
+	</bean>
+	<!-- 자동으로 언어설정을 해주는 Resolver 객체 생성 -->
+	<!-- 사용자의 접속지 정보는 세션에 저장됨 -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+
+	<!-- 언어설정을 변경해줄 수 있는 Interceptor 객체 생성 -->
+	<mvc:interceptors>
+		<bean
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="lang" />
+			<!-- lang 이라는 파라미터 이름에 대해 언어 설정을 바꿔준다 라는뜻 -->
+		</bean>
+	</mvc:interceptors>
+
+
+</beans>
+

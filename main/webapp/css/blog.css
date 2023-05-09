@@ -1,0 +1,428 @@
+@charset "UTF-8";
+
+/* 블로그 디테일 srart */
+#boardInfo>li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#board {
+	margin: auto;
+	width: 60%;
+	height: auto;
+	border: 2px solid #6667ab3d;
+	border-radius: 30px;
+}
+
+#boardDetail {
+	display: flex;
+	padding: 40px;
+	align-items: center;
+	flex-direction: column;
+}
+
+#title {
+	font-size: 33px;
+	color: #343a40;
+	border-bottom: 1px solid #c3bcbc;
+	padding: 20px;
+	text-align: center;
+	width: 90%;
+}
+
+#writer {
+	font-size: 15px;
+	margin-top: 6px;
+	float: right;
+}
+
+#boardInfo {
+	list-style: none;
+	padding-bottom: 40px;
+}
+
+#content {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+#reply {
+	display: none;
+	margin: 20px auto 40px auto;
+	width: 60%;
+	height: auto;
+	border-radius: 30px;
+	background-color: #6667ab21;
+	padding-bottom: 40px;
+	padding-top: 18px;
+}
+
+#replywrite {
+	width: 60%;
+	height: auto;
+	border-radius: 30px;
+	/* background-color: #6667ab21; */
+	/* border: 2px solid #6667ab3d */;
+	margin: 20px auto 40px auto;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+
+#replyDetail {
+	display: flex;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 15px;
+	flex-direction: column;
+	border-bottom: 1px solid #c3bcbc;
+	margin: 0 30px;
+}
+
+#replyInfo {
+	list-style: none;
+	/* border-bottom: 1px solid #c3bcbc; */
+	padding-bottom: 10px;
+	font-size: 13px;
+}
+
+#rereplyDetail {
+	display: flex;
+	padding-left: 60px;
+	padding-right: 40px;
+	padding-top: 15px;
+	background-color: #6667ab12;
+	border-bottom: 1px solid #c3bcbc;
+	margin: 0 30px;
+	align-items: flex-start;
+}
+
+#rereplyDetail>div {
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+#fixtop {
+	width: 120px;
+	position: fixed;
+	bottom: 80px;
+	right: 100px;
+	z-index: 1;
+}
+
+#fixshare {
+	width: 120px;
+	position: fixed;
+	z-index: 1;
+	bottom: 380px;
+	right: 75px;
+}
+
+#fixcomment {
+	width: 120px;
+	position: fixed;
+	z-index: 1;
+	bottom: 280px;
+	right: 75px;
+}
+
+#fixheart {
+	width: 120px;
+	position: fixed;
+	z-index: 1;
+	bottom: 180px;
+	right: 75px;
+}
+
+#fixdelete {
+	width: 120px;
+	position: fixed;
+	z-index: 1;
+	bottom: 580px;
+	right: 75px;
+}
+
+#fixupdate {
+	width: 120px;
+	position: fixed;
+	z-index: 1;
+	bottom: 680px;
+	right: 75px;
+}
+
+#fixboardlist {
+	width: 120px;
+	position: fixed;
+	z-index: 1;
+	bottom: 480px;
+	right: 75px;
+}
+
+#showReply {
+	text-align: center;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 1.7px solid #6667ab45;
+	width: 140px;
+	margin-left: 20.5%;
+	margin-top: 20px;
+	padding: 5px;
+}
+
+.replywriter {
+	font-size: 15px;
+	float: left;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+/* 모달창 CSS */
+.container {
+	width: 100%;
+}
+
+.modal-btn-box {
+	width: 100%;
+	text-align: center;
+}
+
+.modal-btn-box button {
+	display: inline-block;
+	width: 150px;
+	height: 50px;
+	background-color: #ffffff;
+	border: 1px solid #e1e1e1;
+	cursor: pointer;
+	padding-top: 8px;
+}
+
+.popup-wrap {
+	background-color: rgba(0, 0, 0, .3);
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	padding: 15px;
+}
+
+.popup {
+	width: 100%;
+	max-width: 400px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: #264db5;
+	box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, .3);
+}
+
+.popup-head {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #6667AB;
+}
+
+.head-title {
+	font-size: 25px;
+	font-weight: 700;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.popup-body {
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.body-content {
+	width: 100%;
+	padding: 30px;
+}
+
+.body-titlebox {
+	text-align: justify;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	margin-left: 17px;
+}
+
+.body-contentbox {
+	word-break: break-word;
+	overflow-y: auto;
+	min-height: 100px;
+	max-height: 200px;
+}
+
+.popup-foot {
+	width: 100%;
+	height: 50px;
+	background-color: #6667AB;
+}
+
+.pop-btn {
+	display: inline-flex;
+	width: 50%;
+	height: 100%;
+	float: left;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.pop-btn2 {
+	display: inline-flex;
+	width: 50%;
+	height: 100%;
+	float: left;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+	cursor: pointer;
+	border: none;
+	background: none;
+	font-size: 17px;
+}
+
+.pop-btn.confirm {
+	border-right: 1px solid #FFFFFF;
+}
+
+.report-box {
+	padding: 15px;
+}
+
+.report-box2 {
+	margin: 6px;
+}
+
+.report-text {
+	width: 300px;
+	height: 40px;
+}
+/* 블로그 디테일 end */
+
+/* 블로그 start */
+.blog__item__pic {
+	width: 350px;
+	height: 300px;
+	margin: 0px auto;
+	overflow: hidden;
+	border-radius: 30px;
+}
+
+.blog__item__pic1 {
+	width: 250px;
+	height: 250px;
+	margin: 0px auto;
+	overflow: hidden;
+	border-radius: 70%;
+	align-items: center;
+	display: flex;
+	align-items: flex-end;
+}
+
+.blog__item__pic2 {
+	width: 200px;
+	height: 200px;
+	margin: 0px auto;
+	overflow: hidden;
+	border-radius: 70%;
+	align-items: center;
+	display: flex;
+	align-items: flex-end;
+}
+
+.blog__item__pic img {
+	width: 350px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 30px;
+	overflow: hidden;
+	transition: all 0.2s linear;
+	cursor: pointer;
+}
+
+.blog__item__pic img:hover {
+	transform: scale(1.4);
+}
+
+.boast {
+	font-size: 40px;
+	width: 350px;
+	height: 60px;
+	border-radius: 30px;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.month2 {
+	width: 200px;
+	height: 200px;
+	margin: 0px auto;
+}
+
+.month1 {
+	width: 300px;
+	height: 300px;
+	margin: 0px auto;
+}
+
+.crown2 {
+	position: absolute;
+	width: 100px;
+	margin-left: 50px;
+}
+
+.crown1 {
+	position: absolute;
+	width: 152px;
+	margin-left: 74px;
+}
+
+.crowncat2 {
+	object-fit: cover;
+	margin-top: 31px;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #6667AB;
+	border-radius: 70%;
+}
+
+.crowncat1 {
+	object-fit: cover;
+	margin-top: 60px;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #6667AB;
+	border-radius: 70%;
+}
+
+.write_board {
+	display: inline-block;
+	border: 1px solid #6667AB;
+	border-radius: 20px;
+	font-weight: 600;
+	padding: 12px 20px;
+	background: #6667AB;
+	color: #fff;
+	transition: all 0.4s ease;
+	font-size: 17px;
+	width: 130px;
+	text-align: center;
+}
+
+.show-board {
+	display: none;
+}
